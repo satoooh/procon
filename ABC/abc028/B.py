@@ -1,0 +1,8 @@
+S = input()
+a = S.count("A")
+b = S.count("B")
+c = S.count("C")
+d = S.count("D")
+e = S.count("E")
+f = S.count("F")
+print(a, b, c, d, e, f)
