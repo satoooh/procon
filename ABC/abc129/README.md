@@ -1,6 +1,6 @@
 ## AtCoder Beginner Contest 129
 
-解説リンク: まだ
+解説リンク: https://www.planeta.tokyo/abc-129
 
 ### D - Lamp
 
