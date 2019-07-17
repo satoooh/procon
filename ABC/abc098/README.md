@@ -27,7 +27,7 @@ N = int(input())
 S = input()
 ans = float("inf")
 for i in range(N):
-	ans = min(ans, S[i + 1:].count("E") + S[: i].count("W"))
+    ans = min(ans, S[i + 1:].count("E") + S[: i].count("W"))
 print(ans)
 ```
 
@@ -43,11 +43,11 @@ N = int(input())
 S = input()
 ans = [S[1:].count("E")]
 for i in range(1, N):
-	tmp = ans[i - 1]
-	if S[i - 1] == "W":
-		tmp += 1
-	if S[i] == "E":
-		tmp -= 1
-	ans.append(tmp)
+    tmp = ans[i - 1]
+    if S[i - 1] == "W":
+        tmp += 1
+    if S[i] == "E":
+        tmp -= 1
+    ans.append(tmp)
 print(min(ans))
 ```
