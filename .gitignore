@@ -1,2 +1,5 @@
 .DS_Dtore
 .vscode/
+
+# 演習用の下書きファイル
+ensyu.py
