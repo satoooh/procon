@@ -1,6 +1,6 @@
 # AtCoder Beginner Contest 137
 
-解説: まだ
+解説: [https://www.planeta.tokyo/abc-137](https://www.planeta.tokyo/abc-137)
 
 ## D - Summer Vacation
 
