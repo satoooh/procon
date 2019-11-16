@@ -1,3 +1,2 @@
-S = input()
-for i in range(len(S)):
-    print(i + 1)
+N = int(input())
+print((N - 1) // 2)
