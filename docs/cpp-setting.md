@@ -6,23 +6,10 @@ macOS 上での競技プログラミング用の VSCode 環境構築について
 
 ## 目的
 
+AtCoder の C++ のコンパイラは Clang 系と gcc 系の２つが用意されている。ただ、 MacOS では C++ のコンパイラとして Clang 系のみ標準搭載されている。（ `/usr/bin/g++` ）今回の目的のライブラリである `stdc++.h` は gcc にのみ入っているため、 `#include <bits/>stdc++.h>` を使えるビルド環境を構築することを目的とする。
+
 - gcc 動作環境を整え、 VSCode からコンパイルと実行を行うようにする
-- 競プロで役立つライブラリ `bits/std++.h` を使えるようにする
-
-## 前提: C++ のコンパイラについて
-
-競プロの C++ のコンパイラは Clang 系と gcc 系の２つが用意されている。ただ、 MacOS では C++ のコンパイラとして Clang 系のみ標準搭載されている。（ `/usr/bin/g++` ）
-
-```sh
-$ /usr/bin/g++ --version
-Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/4.2.1
-Apple clang version 11.0.0 (clang-1100.0.33.12)
-Target: x86_64-apple-darwin19.0.0
-Thread model: posix
-InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-```
-
-今回の目的のライブラリである `stdc++.h` は gcc にのみ入っているため、 `#include <bits/>stdc++.h>` を使えるビルド環境を構築することを目的とする。
+- ライブラリ `bits/std++.h` を使えるようにする
 
 ## 準備
 
@@ -40,12 +27,7 @@ $ brew install gcc
 
 ## path の設定
 
-この時点で mac 上に2種類のコンパイラが同居している状態になる。
-
-- `/usr/bin/g++` : clang
-- `/usr/local/g++-9` : gcc の実体
-
-ただ、この状態で g++ コマンドを打っても、 `/usr/bin/g++` （clang）の方が呼び出されてしまう。
+この時点で mac 上に2種類のコンパイラが同居している状態になる。ただ、この状態で g++ コマンドを打っても、 `/usr/bin/g++` （clang）の方が呼び出されてしまう。
 
 ```bash
 $ which g++
@@ -69,7 +51,7 @@ $ which g++
 
 ## コンパイル
 
-コンパイラの設定が完了したので、次に code-runner を使って C++ のコンパイルを行う。code-runner では、言語ごとに実行するスクリプトを設定できる。
+次に code-runner を使って C++ のコンパイルを行う。code-runner では、言語ごとに実行するスクリプトを設定できる。
 
 ### code-runner の設定ファイル編集
 
@@ -85,14 +67,6 @@ settings.json の編集から、次の内容を入れる。
 
 ### スクリプト作成
 
-次に `cpp.sh` を定義する。
-
-```bash
-$ cd ~/
-$ mkdir vsc_run
-$ code cpp.sh
-```
-
 中身では、シェルの実行時の引数 $1 にファイル名が入るように動作するので、「hogehoge.cpp をコンパイルし、実行ファイル hogehoge を作成して実行する」という処理になる。
 
 ```cpp.sh
@@ -104,15 +78,13 @@ g++ -g -o $objfile $file
 ./$objfile
 ```
 
-これで実行ボタンを押すとできるようになった。
-
-## `#include <bits/stdc++.h>` を使えるようにする
+## #include <bits/stdc++.h> を使えるようにする
 
 最後に `stdc++.h` を使えるようにする。
 
 ### stdc++.h の準備
 
-実は gcc をインストールした時点で、 `/usr/local/` 下の奥深くに stdc++.h は存在する。
+gcc をインストールした時点で、 `/usr/local/` 下の奥深くに `stdc++.h` は存在する。
 
 ```bash
 $ cd /usr/local/
