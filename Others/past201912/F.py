@@ -7,5 +7,5 @@ for i in range(len(S)-1):
         end = i+1
 words.append(S[end:])
 
-words.sort()
+words.sort(key=str.lower)
 print("".join(words))
