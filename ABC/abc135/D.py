@@ -11,16 +11,17 @@ if S[0] == "?":
 else:
     dp[0][int(S[0])] = 1
 
-
 # dpテーブル更新式
 for i in range(1, N):
-    si = S[i]
-    if si == "?":
-        for si_cand in range(10):
+    if S[i] == "?":
+        for si in range(10):
             for j in range(13):
-                dp[i][(j*10+si_cand)%13] += dp[i-1][j] % MOD
+                dp[i][(j*10 + si)%13] += dp[i-1][j]
+                dp[i][(j*10 + si)%13] %= MOD
     else:
+        si = int(S[i])
         for j in range(13):
-            dp[i][(j*10+int(si))%13] += dp[i-1][j] % MOD
+            dp[i][(j*10 + si)%13] += dp[i-1][j]
+            dp[i][(j*10 + si)%13] %= MOD
 
-print(dp[N-1][5] % MOD)
+print(dp[N-1][5])
