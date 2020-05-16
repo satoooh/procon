@@ -1,23 +1,26 @@
-INF = 10 ** 9 + 7
-
 S = input()
-# dp[i][j]はうしろからi桁を13で割った余りがjであるものの個数
-dp = [[0] * 13 for _ in range(len(S) + 1)]
-dp[0][0] = 1
-mul = 1
+N = len(S)
 
-for i in range(len(S)):
-    x = S[-(i + 1)]
-    if x == "?":
-        for k in range(10):
+MOD = 10**9 + 7
+dp = [[0 for _ in range(13)] for _ in range(N)]  # dp[i][j]: S[i]までみて13で割ってjあまるものの個数
+
+# 初期値
+if S[0] == "?":
+    for j in range(10):
+        dp[0][j] = 1
+else:
+    dp[0][int(S[0])] = 1
+
+
+# dpテーブル更新式
+for i in range(1, N):
+    si = S[i]
+    if si == "?":
+        for si_cand in range(10):
             for j in range(13):
-                dp[i + 1][(mul * k + j) % 13] += dp[i][j]
-                dp[i + 1][(mul * k + j) % 13] %= INF
+                dp[i][(j*10+si_cand)%13] += dp[i-1][j] % MOD
     else:
-        k = int(x)
         for j in range(13):
-            dp[i + 1][(mul * k + j) % 13] += dp[i][j]
-            dp[i + 1][(mul * k + j) % 13] %= INF
-    mul = mul * 10 % 13  # 計算量削減のためここで13で割っている
+            dp[i][(j*10+int(si))%13] += dp[i-1][j] % MOD
 
-print(dp[len(S)][5])
+print(dp[N-1][5] % MOD)
