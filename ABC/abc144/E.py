@@ -1,5 +1,3 @@
-# あとでもっかい解きたい
-
 import numpy as np
 
 N, K = map(int, input().split())
