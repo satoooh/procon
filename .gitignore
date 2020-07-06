@@ -4,3 +4,8 @@
 # 演習用の下書きファイル
 ensyu.py
 ensyu.cpp
+ensyu.go
+
+# 一時的に無視
+lib/
+memo.txt
