@@ -1,12 +1,26 @@
-# AtCoder 記録用リポジトリ
+# procon 精進記録用リポジトリ
 
-## 概要
+## これはなに
+
+競技プログラミング関連の精進内容やメモを記録しておくリポジトリです。
+
+## AOJ
+
+[AIZU ONLINE JUDGE: Programming Challenge](http://judge.u-aizu.ac.jp/onlinejudge/index.jsp) の問題を解いて Accepted したものを載せていきます。
+
+## Project-Euler
+
+[Project Euler](https://projecteuler.net/) の解いた問題の解答を載せていきます。
+
+基本的に Python3 で書いてます。
+
+- [問題の日本語訳](http://odz.sakura.ne.jp/projecteuler/index.php?Project%20Euler)
+
+## AtCoder
 
 [AtCoder：競技プログラミングコンテストを開催する国内最大のサイト](https://atcoder.jp/?lang=ja) の問題を解いて Accepted したものを精進記録のために載せていきます。
 
 AtCoder アカウントはこちら → [satoooh - AtCoder](https://atcoder.jp/users/satoooh)
-
-[blog](https://www.planeta.tokyo/) にコンテストの感想を書いていきます。
 
 ## 参考リンク
 
