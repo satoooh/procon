@@ -2,9 +2,7 @@
 .vscode/
 
 # 演習用の下書きファイル
-ensyu.py
-ensyu.cpp
-ensyu.go
+ensyu/
 
 # 一時的に無視
 lib/
