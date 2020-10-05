@@ -6,7 +6,7 @@
 
 ## AOJ
 
-[AIZU ONLINE JUDGE: Programming Challenge](https://onlinejudge.u-aizu.ac.jp/home) の問題を解いて Accepted したものを載せていきます。
+[AIZU ONLINE JUDGE](https://onlinejudge.u-aizu.ac.jp/home) の問題を解いて Accepted したものを載せていきます。
 
 ## Project-Euler
 
