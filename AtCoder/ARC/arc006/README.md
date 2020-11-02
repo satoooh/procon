@@ -1,3 +1,0 @@
-## AtCoder Regular Contest 006
-
-解説: Coming Soon...
