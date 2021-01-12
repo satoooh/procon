@@ -1,7 +1,7 @@
 N = int(input())
 S = [input() for _ in range(N)]
 
-# hoge と !hoge があれば T = hoge が不満な文字列になる。
+# hoge と !hoge があれば T = hoge が不満な文字列になる
 s1 = set() # !なし文字列の集合
 s2 = set() # !あり文字列から最初の文字を取り除いたものの集合
 
